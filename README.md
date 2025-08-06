@@ -11,7 +11,7 @@ For this project, I focused on the following key points, which I'll walk you thr
 
 3. Identifying potential insights for the report
 
-
+4. Performing data transformations
 
 5. Highlighting specific insights
 
