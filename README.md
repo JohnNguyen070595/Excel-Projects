@@ -5,7 +5,7 @@ I'm excited to introduce my Excel dashboard! While Excel may have some limitatio
 
 For this project, I focused on the following key points, which I'll walk you through:
 
-
+1. Understanding business context and stakeholders
 
 2. Defining business questions
 
