@@ -17,6 +17,6 @@ For this project, I focused on the following key points, which I'll walk you thr
 
 6. Recommendations
 
-
+7. Useful resources
 
 
