@@ -13,7 +13,7 @@ For this project, I focused on the following key points, which I'll walk you thr
 
 4. Performing data transformations
 
-
+5. Highlighting specific insights
 
 6. Recommendations
 
