@@ -1,1 +1,105 @@
+Automatic Export Excel Invoice to PDF
+Overview
+This project demonstrates how to create an automated invoice system in Excel that exports invoices to PDF with a single click using VBA macros. The solution allows dynamic selection of customers and products, with automatic calculation of prices, taxes, and totals.
+Features
 
+🔄 Dynamic customer selection with automatic data population
+📦 Product dropdown with automatic price lookup
+🧮 Automatic tax and total calculations
+📄 One-click PDF export with custom naming
+💾 Organized file saving to specified directory
+
+File Structure
+The Excel workbook contains 3 tabs:
+
+Invoice - Main invoice template
+Customers - Customer database (Name, Address, Email, etc.)
+Products - Product catalog (Product Name, Description, Unit Price)
+
+Prerequisites
+
+Microsoft Excel (with VBA support)
+Developer tab enabled in Excel
+File saved as .xlsm (Excel Macro-Enabled Workbook)
+
+Setup Instructions
+1. Customer Selection (Drop-down List)
+In the Invoice tab, a Data Validation drop-down list is created to select different companies. Other customer information (address, email) automatically updates using XLOOKUP().
+Formula Example:
+excel=XLOOKUP($D$5,Customers!B:B,Customers!C:C)
+This searches for the selected customer name in cell D5 and returns corresponding information from the Customers tab.
+2. Product Selection and Pricing
+A Data Validation drop-down list in the Product Description area allows selection from 30 different products. Unit prices automatically update using XLOOKUP().
+Unit Price Formula:
+excel=XLOOKUP(B12,Products!C:C,Products!D:D)
+This searches for the product name from the Invoice tab and returns the corresponding price from the Products tab.
+Conditional Formula (for empty cells):
+excel=IF(B15="","",XLOOKUP(B15,Products!C:C,Products!D:D))
+This formula only returns a unit price if there is a value in the Product Description column (B15), otherwise it returns an empty string.
+3. Date Functions
+
+Invoice Date: Use =TODAY() for the current date
+Due Date: Use =TODAY() + 28 to add 28 days to the current date
+
+4. Set Print Area
+
+Go to Page Layout menu
+Select Print Area → Set Print Area
+This ensures Excel will print only the selected invoice area
+
+VBA Automation Code
+PDF Export Macro
+vbaSub PDF()
+    Dim invoice_number As Long
+    Dim name As String
+    Dim file_path As String
+    Dim file_name As String
+    
+    invoice_number = Range("G4")
+    name = Range("D5")
+    file_path = "C:\Data Analysis Career Path\Excel\VBA practice\PDF export with VBA\"
+    file_name = invoice_number & "_" & name
+    
+    ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, _
+        ignoreprintareas:=False, _
+        Filename:=file_path & file_name
+End Sub
+How the Code Works:
+
+Dimensions are declared for:
+
+invoice_number - Stores the invoice number from cell G4
+name - Stores the customer name from cell D5
+file_path - Stores the directory path where PDFs will be saved
+file_name - Combines invoice number and customer name
+
+
+The PDF filename is created by combining invoice_number and name (e.g., "12345_ABC Company.pdf")
+The file is saved to the specified local path using ExportAsFixedFormat
+
+Creating the Export Button
+
+Go to Developer tab
+Click Insert → Button (Form Control)
+Draw the button on your sheet
+Assign the PDF macro to the button
+Right-click the button and rename it to "Export to PDF"
+
+How to Use
+
+Open the file (must be saved as .xlsm)
+Select a customer from the drop-down list in the Invoice tab
+Select products from the Product Description drop-down lists
+Verify that prices, tax, and totals calculate automatically
+Click the "Export to PDF" button to save the invoice as a PDF
+
+The PDF will be saved to your specified directory with the filename format: [Invoice_Number]_[Customer_Name].pdf
+Important Notes
+⚠️ File Format: The workbook must be saved as Excel Macro-Enabled Workbook (*.xlsm) to run VBA macros.
+⚠️ File Path: Update the file_path variable in the VBA code to match your desired save location.
+⚠️ Security: Enable macros when opening the file (if prompted by Excel).
+Example Files
+Please refer to the attached files:
+
+Excel workbook (.xlsm)
+Sample PDF export
