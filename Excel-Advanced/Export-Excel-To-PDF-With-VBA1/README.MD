@@ -19,6 +19,8 @@ The other company's information such as address and email is automatically updat
 
 Also, a drop-down list using **Data Validation** is created in the Product Description area to select from 30 different products. The price is automatically updated by using `XLOOKUP()`. At the same time, Tax and Total (exc. Tax) are updated by using calculation formulas.
 
+![Dashboard](Excel-Advanced/Images/Product category.png)
+
 **Example:**
 Unit price: searching the product name in the Invoice tab and returning the result from the Products tab
 ```excel
