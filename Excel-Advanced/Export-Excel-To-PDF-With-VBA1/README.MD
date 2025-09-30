@@ -22,7 +22,7 @@ Also, a drop-down list using **Data Validation** is created in the Product Descr
 ![Product category](Product-Category.png)
 
 **Example:**
-Unit price: searching the product name in the Invoice tab and returning the result from the Products tab
+Unit price: searching the product name in the Invoice tab and returning the result from the Product Description tab
 ```excel
 =XLOOKUP(B12,Products!C:C,Products!D:D)
 ```
@@ -73,8 +73,5 @@ To create a button to run this VBA code, in the Developer section, insert a butt
 ## Example Files
 
 For the Excel file and PDF file as an example, please refer to the attached files.
-
-## Credits
-
 Inspired from Kenji Explains.
 
