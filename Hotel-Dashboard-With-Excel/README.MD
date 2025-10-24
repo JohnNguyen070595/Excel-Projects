@@ -1,4 +1,4 @@
-# Hotel-Dashboard
+
 Hi everyone,
 
 I'm excited to introduce my Excel dashboard! While Excel may have some limitations compared to Power BI, what I appreciate most is its ease of use and the convenience of features like pivot tables, as well as its flexibility in shaping and organizing data for reports.
