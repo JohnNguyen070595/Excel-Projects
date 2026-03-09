@@ -1,4 +1,4 @@
-![Hotel Dashboard Overview](Hotel-Dashboard-Overview.png)
+![Hotel Dashboard Overview](Hotel Dashboard Overview.png)
 # Hotel-Dashboard
 Hi everyone,
 
