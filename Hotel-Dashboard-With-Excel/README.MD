@@ -19,5 +19,6 @@ For this project, I focused on the following key points, which I'll walk you thr
 
 7. Useful resources
 
+The full article detailing the data analysis and visualization can be found on [Medium](https://medium.com/@thachnguyen0705/hotel-dashboard-using-excel-33f2cd1c6d13).
 
-
+For the dashboard visualization, please refer to the attached PDF file in this folder.
